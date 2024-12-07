@@ -27,5 +27,5 @@ class DataIngestion:
 
 if __name__ == "__main__":
     obj = DataIngestion()
-    healthcare = obj.raw_data()
+    obj.raw_data()
 

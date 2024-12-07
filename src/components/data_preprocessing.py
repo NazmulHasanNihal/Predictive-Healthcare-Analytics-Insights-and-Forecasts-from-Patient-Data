@@ -3,7 +3,7 @@ import os
 import pandas as pd 
 import numpy as np  
 
-from src.components.data_ingestion import DataIngestion
+from data_ingestion import DataIngestion
 from src.exception import CustomException
 from src.logger import logging
 
@@ -38,7 +38,7 @@ class DataPreprocessing:
             for col in categorical_columns: 
                 healthcare[col] = healthcare[col].fillna(healthcare[col].mode()[0])
 
-            healthcare.to_csv('../data/processed/healthcare_preprocessed.csv', index=False)
+            healthcare.to_csv('data/processed/healthcare_preprocessed_data.csv', index=False)
 
             logging.info("Data preprocessing completed")
             return healthcare
@@ -49,3 +49,5 @@ class DataPreprocessing:
 if __name__ == "__main__":
     obj = DataPreprocessing()
     obj.initiate_data_preprocessing()
+
+
